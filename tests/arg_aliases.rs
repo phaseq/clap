@@ -1,11 +1,8 @@
-extern crate clap;
-extern crate regex;
-
 include!("../clap-test.rs");
 
 use clap::{App, Arg};
 
-static SC_VISIBLE_ALIAS_HELP: &str = "ct-test 1.2
+static SC_VISIBLE_ALIAS_HELP: &'static str = "ct-test 1.2
 Some help
 
 USAGE:
@@ -19,7 +16,7 @@ FLAGS:
 OPTIONS:
     -o, --opt <opt>     [aliases: visible]";
 
-static SC_INVISIBLE_ALIAS_HELP: &str = "ct-test 1.2
+static SC_INVISIBLE_ALIAS_HELP: &'static str = "ct-test 1.2
 Some help
 
 USAGE:

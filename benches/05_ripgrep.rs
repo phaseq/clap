@@ -5,7 +5,6 @@
 
 #![feature(test)]
 
-extern crate clap;
 #[macro_use]
 extern crate lazy_static;
 extern crate test;
@@ -224,7 +223,7 @@ fn parse_lots(b: &mut Bencher) {
     });
 }
 
-const ABOUT: &str = "
+const ABOUT: &'static str = "
 ripgrep (rg) recursively searches your current directory for a regex pattern.
 
 ripgrep's regex engine uses finite automata and guarantees linear time
@@ -235,13 +234,13 @@ Project home page: https://github.com/BurntSushi/ripgrep
 
 Use -h for short descriptions and --help for more details.";
 
-const USAGE: &str = "
+const USAGE: &'static str = "
     rg [OPTIONS] <pattern> [<path> ...]
     rg [OPTIONS] [-e PATTERN | -f FILE ]... [<path> ...]
     rg [OPTIONS] --files [<path> ...]
     rg [OPTIONS] --type-list";
 
-const TEMPLATE: &str = "\
+const TEMPLATE: &'static str = "\
 {bin} {version}
 {author}
 {about}

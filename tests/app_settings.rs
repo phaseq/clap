@@ -1,4 +1,3 @@
-extern crate clap;
 extern crate regex;
 
 use clap::{App, AppSettings, Arg, ErrorKind, Propagation};
@@ -40,7 +39,7 @@ FLAGS:
 OPTIONS:
     -o, --opt=<FILE>    some";
 
-static UNIFIED_HELP: &str = "test 1.3
+static UNIFIED_HELP: &'static str = "test 1.3
 Kevin K.
 tests stuff
 
@@ -56,7 +55,7 @@ OPTIONS:
         --option <opt>    some option
     -V, --version         Prints version information";
 
-static SKIP_POS_VALS: &str = "test 1.3
+static SKIP_POS_VALS: &'static str = "test 1.3
 Kevin K.
 tests stuff
 

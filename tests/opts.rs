@@ -1,12 +1,9 @@
-extern crate clap;
-extern crate regex;
-
 include!("../clap-test.rs");
 
 use clap::{App, Arg, ArgMatches, ArgSettings, ErrorKind};
 
 #[cfg(feature = "suggestions")]
-static DYM: &str =
+static DYM: &'static str =
     "error: Found argument '--optio' which wasn't expected, or isn't valid in this context
 \tDid you mean --option?
 If you tried to supply `--optio` as a PATTERN use `-- --optio`

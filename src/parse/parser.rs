@@ -23,9 +23,9 @@ use crate::parse::errors::Result as ClapResult;
 use crate::parse::features::suggestions;
 use crate::parse::Validator;
 use crate::parse::{ArgMatcher, SubCommand};
+use crate::util::{self, ChildGraph, Key, OsStrExt2, EMPTY_HASH};
 #[cfg(all(feature = "debug", any(target_os = "windows", target_arch = "wasm32")))]
 use crate::util::OsStrExt3;
-use crate::util::{self, ChildGraph, Key, OsStrExt2, EMPTY_HASH};
 use crate::INTERNAL_ERROR_MSG;
 use crate::INVALID_UTF8;
 

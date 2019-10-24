@@ -1,24 +1,18 @@
-extern crate clap;
-
 use clap::{App, Arg};
 
-// This tests a programmer error and will only succeed with debug_assertions
-#[cfg(debug_assertions)]
 #[test]
-#[should_panic(expected = "Arg names must be unique")]
+#[should_panic]
 fn unique_arg_names() {
     let _ = App::new("some")
         .args(&[
-            Arg::with_name("arg1").short('a'),
-            Arg::with_name("arg1").short('b'),
+            Arg::with_name("arg").short('a'),
+            Arg::with_name("arg").short('b'),
         ])
         .try_get_matches();
 }
 
-// This tests a programmer error and will only succeed with debug_assertions
-#[cfg(debug_assertions)]
 #[test]
-#[should_panic(expected = "Argument short must be unique")]
+#[should_panic]
 fn unique_arg_shorts() {
     let _ = App::new("some")
         .args(&[
@@ -28,10 +22,8 @@ fn unique_arg_shorts() {
         .try_get_matches();
 }
 
-// This tests a programmer error and will only succeed with debug_assertions
-#[cfg(debug_assertions)]
 #[test]
-#[should_panic(expected = "Argument long must be unique")]
+#[should_panic]
 fn unique_arg_longs() {
     let _ = App::new("some")
         .args(&[

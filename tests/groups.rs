@@ -1,11 +1,8 @@
-extern crate clap;
-extern crate regex;
-
 include!("../clap-test.rs");
 
 use clap::{App, Arg, ArgGroup, ErrorKind};
 
-static REQ_GROUP_USAGE: &str = "error: The following required arguments were not provided:
+static REQ_GROUP_USAGE: &'static str = "error: The following required arguments were not provided:
     <base|--delete>
 
 USAGE:
@@ -13,7 +10,7 @@ USAGE:
 
 For more information try --help";
 
-static REQ_GROUP_CONFLICT_USAGE: &str =
+static REQ_GROUP_CONFLICT_USAGE: &'static str =
     "error: The argument '<base>' cannot be used with '--delete'
 
 USAGE:
@@ -21,7 +18,7 @@ USAGE:
 
 For more information try --help";
 
-static REQ_GROUP_CONFLICT_REV: &str =
+static REQ_GROUP_CONFLICT_REV: &'static str =
     "error: The argument '--delete' cannot be used with '<base>'
 
 USAGE:
